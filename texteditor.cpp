@@ -34,6 +34,11 @@ void TextEditor::load_file()
             return;
         }
         qDebug() << file_name;
+
+        QTextStream stream(&file);
+        editor -> setText(stream.readAll());
+
+        file.close();
     }
 }
 
