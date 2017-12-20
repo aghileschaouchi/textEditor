@@ -23,6 +23,8 @@ void TextEditor::load_file()
         return;
     else
     {
+        editor->clear();
+
         QFile file(file_name);
         QString line;
 
@@ -36,8 +38,27 @@ void TextEditor::load_file()
         qDebug() << file_name;
 
         QTextStream stream(&file);
-        editor -> setText(stream.readAll());
 
+        while(!stream.atEnd())
+        {
+            QString line = stream.readLine();
+
+            if (line.size() > 20)
+            {
+                const char ins = '\n';
+                const int dec = 20;
+
+                for(int i = dec; i <= line.size(); i += dec+1)
+                {
+                    line.insert(i, ins);
+                    qDebug() << line;
+                }
+            qDebug() << line;
+
+            }
+
+            editor->append(line);
+        }
         file.close();
     }
 }
