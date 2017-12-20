@@ -2,13 +2,8 @@
 #include "ui_texteditor.h"
 
 TextEditor::TextEditor(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::TextEditor)
+    QWidget(parent)
 {
-    ui->setupUi(this);
+    setFixedSize(1200, 800);
 }
 
-TextEditor::~TextEditor()
-{
-    delete ui;
-}

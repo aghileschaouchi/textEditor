@@ -13,10 +13,9 @@ class TextEditor : public QWidget
 
 public:
     explicit TextEditor(QWidget *parent = 0);
-    ~TextEditor();
 
 private:
-    Ui::TextEditor *ui;
+
 };
 
 #endif // TEXTEDITOR_H
