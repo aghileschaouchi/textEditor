@@ -19,7 +19,8 @@ public:
 private:
     QTextEdit *editor;
     QPushButton *button;
-
+public slots:
+    void load_file();
 
 };
 
