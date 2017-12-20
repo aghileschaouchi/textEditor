@@ -19,6 +19,22 @@ void TextEditor::load_file()
 {
     QString file_name = QFileDialog::getOpenFileName(this,
             tr("Open file"));
+    if (file_name.isEmpty())
+        return;
+    else
+    {
+        QFile file(file_name);
+        QString line;
+
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            QMessageBox::information(this,
+                                     tr("Impossible d'ouvrir le ficher"),
+                                     file.errorString());
+            return;
+        }
+        qDebug() << file_name;
+    }
 }
 
 
