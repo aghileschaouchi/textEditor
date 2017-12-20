@@ -2,6 +2,8 @@
 #define TEXTEDITOR_H
 
 #include <QWidget>
+#include <QtWidgets>
+#include <QDebug>
 
 namespace Ui {
 class TextEditor;
@@ -15,6 +17,9 @@ public:
     explicit TextEditor(QWidget *parent = 0);
 
 private:
+    QTextEdit *editor;
+    QPushButton *button;
+
 
 };
 
